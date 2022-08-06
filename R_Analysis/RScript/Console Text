@@ -15,6 +15,7 @@ Type 'contributors()' for more information and
 Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
+Deliverable 1
 > setwd("~/Desktop/R_Analysis")
 > MechaCarChallenge.RScript <- read.csv(file='MechaCar_mpg.csv',check.names=F,stringsAsFactors = F)
 > library(dplyr)
@@ -115,4 +116,26 @@ Warning messages:
 > View(MechaCarChallenge.RScript)
 > save.image("~/Desktop/R_Analysis/MechaCarChallenge.RScript.RData")
 > load("~/Desktop/R_Analysis/MechaCarChallenge.RScript.RData")
-> 
+
+Deliverable 2
+> library(readr)
+> Suspension_Coil <- read_csv("RScript/Suspension_Coil.csv")
+Rows: 150 Columns: 3                                                                                                                 
+── Column specification ──────────────────────────────────────────────────────────────────────────
+Delimiter: ","
+chr (2): VehicleID, Manufacturing_Lot
+dbl (1): PSI
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+> View(Suspension_Coil)
+View(MechaCarChallenge.RScript)
+> View(Suspension_Coil)
+> total_summary <- Suspension_Coil%>% summarize(Mean = mean(PSI), Median = median(PSI), Variance = var(PSI), SD = sd(PSI), .groups = 'keep')
+> View(total_summary)
+> lot_summary <- Suspension_Coil %>% group_by(Manufacturing_Lot) %>% summarize(Mean = mean(PSI),Median = median(PSI), Variance = var(PSI), SD = sd(PSI) , .groups = 'keep')
+> View(Suspension_Coil)
+> View(Suspension_Coil)
+> View(total_summary)
+> View(lot_summary)
+> save.image("~/Desktop/R_Analysis/MechaCarChallenge.RScript.RData")
