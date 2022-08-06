@@ -1,0 +1,118 @@
+R version 4.2.1 (2022-06-23) -- "Funny-Looking Kid"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin17.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+> setwd("~/Desktop/R_Analysis")
+> MechaCarChallenge.RScript <- read.csv(file='MechaCar_mpg.csv',check.names=F,stringsAsFactors = F)
+> library(dplyr)
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+    
+> lm(formula = mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD + mpg, data = MechaCarChallenge.RScript)
+
+Call:
+lm(formula = mpg ~ vehicle_length + vehicle_weight + spoiler_angle + 
+    ground_clearance + AWD + mpg, data = MechaCarChallenge.RScript)
+
+Coefficients:
+     (Intercept)    vehicle_length  
+      -1.040e+02         6.267e+00  
+  vehicle_weight     spoiler_angle  
+       1.245e-03         6.877e-02  
+ground_clearance               AWD  
+       3.546e+00        -3.411e+00  
+
+Warning messages:
+1: In model.matrix.default(mt, mf, contrasts) :
+  the response appeared on the right-hand side and was dropped
+2: In model.matrix.default(mt, mf, contrasts) :
+  problem with term 6 in model.matrix: no columns are assigned
+> summary(lm(formula = mpg ~ vehicle_length + vehicle_weight + spoiler_angle + 
++        ground_clearance + AWD + mpg, data = MechaCarChallenge.RScript))
+
+Call:
+lm(formula = mpg ~ vehicle_length + vehicle_weight + spoiler_angle + 
+    ground_clearance + AWD + mpg, data = MechaCarChallenge.RScript)
+
+Residuals:
+     Min       1Q   Median       3Q 
+-19.4701  -4.4994  -0.0692   5.4433 
+     Max 
+ 18.5849 
+
+Coefficients:
+                   Estimate Std. Error
+(Intercept)      -1.040e+02  1.585e+01
+vehicle_length    6.267e+00  6.553e-01
+vehicle_weight    1.245e-03  6.890e-04
+spoiler_angle     6.877e-02  6.653e-02
+ground_clearance  3.546e+00  5.412e-01
+AWD              -3.411e+00  2.535e+00
+                 t value Pr(>|t|)    
+(Intercept)       -6.559 5.08e-08 ***
+vehicle_length     9.563 2.60e-12 ***
+vehicle_weight     1.807   0.0776 .  
+spoiler_angle      1.034   0.3069    
+ground_clearance   6.551 5.21e-08 ***
+AWD               -1.346   0.1852    
+---
+Signif. codes:  
+  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’
+  0.1 ‘ ’ 1
+
+Residual standard error: 8.774 on 44 degrees of freedom
+Multiple R-squared:  0.7149,	Adjusted R-squared:  0.6825 
+F-statistic: 22.07 on 5 and 44 DF,  p-value: 5.35e-11
+
+Warning messages:
+1: In model.matrix.default(mt, mf, contrasts) :
+  the response appeared on the right-hand side and was dropped
+2: In model.matrix.default(mt, mf, contrasts) :
+  problem with term 6 in model.matrix: no columns are assigned
+> save(df, file = "MechaCar_mpg")
+> View(MechaCarChallenge.RScript)
+> lm(formula = mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD + mpg, data = MechaCarChallenge.RScript)
+
+Call:
+lm(formula = mpg ~ vehicle_length + vehicle_weight + spoiler_angle + 
+    ground_clearance + AWD + mpg, data = MechaCarChallenge.RScript)
+
+Coefficients:
+     (Intercept)    vehicle_length  
+      -1.040e+02         6.267e+00  
+  vehicle_weight     spoiler_angle  
+       1.245e-03         6.877e-02  
+ground_clearance               AWD  
+       3.546e+00        -3.411e+00  
+
+Warning messages:
+1: In model.matrix.default(mt, mf, contrasts) :
+  the response appeared on the right-hand side and was dropped
+2: In model.matrix.default(mt, mf, contrasts) :
+  problem with term 6 in model.matrix: no columns are assigned
+> save(df, file = "MechaCarChallenge.RScript")
+> View(MechaCarChallenge.RScript)
+> save.image("~/Desktop/R_Analysis/MechaCarChallenge.RScript.RData")
+> load("~/Desktop/R_Analysis/MechaCarChallenge.RScript.RData")
+> 
