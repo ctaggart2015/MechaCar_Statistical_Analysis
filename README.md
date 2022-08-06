@@ -31,3 +31,4 @@ lot_summary dataframe
 <img width="846" alt="Screen Shot 2022-08-06 at 6 02 06 PM" src="https://user-images.githubusercontent.com/99035696/183267421-1cd6d29f-0a4f-4a2c-ae83-a85e032e8bf7.png">
 
 #### The design specifications for the MechaCar suspension coils dictate that the variance of the suspension coils must not exceed 100 pounds per square inch. Does the current manufacturing data meet this design specification for all manufacturing lots in total and each lot individually? Why or why not?
+I would say the majority that the current manufacturing data does meet the design specifications of not exceeding 100 pounds. If we look at the chart for the total_summary dataframe variance it tells us the number 62.29356 which is below 100pds. But when it comes to the lot_summary dataframe we can see that Lot3 is above 100 being 170.2861224 which exceeds the limits. Lot1 and Lot2 does meet specifications though.
