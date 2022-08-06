@@ -139,3 +139,60 @@ View(MechaCarChallenge.RScript)
 > View(total_summary)
 > View(lot_summary)
 > save.image("~/Desktop/R_Analysis/MechaCarChallenge.RScript.RData")
+
+Deliverable 3
+> ?t.test()
+> t.test(Suspension_Coil$PSI,mu=mean(Suspension_Coil$PSI))
+
+	One Sample t-test
+
+data:  Suspension_Coil$PSI
+t = 0, df = 149, p-value = 1
+alternative hypothesis: true mean is not equal to 1498.78
+95 percent confidence interval:
+ 1497.507 1500.053
+sample estimates:
+mean of x 
+  1498.78 
+
+> t.test(subset(Suspension_Coil$PSI,Suspension_Coil$Manufacturing_Lot == "Lot1"),mu=mean(Suspension_Coil$PSI))
+
+	One Sample t-test
+
+data:  subset(Suspension_Coil$PSI, Suspension_Coil$Manufacturing_Lot == "Lot1")
+t = 8.7161, df = 49, p-value = 1.568e-11
+alternative hypothesis: true mean is not equal to 1498.78
+95 percent confidence interval:
+ 1499.719 1500.281
+sample estimates:
+mean of x 
+     1500 
+
+> t.test(subset(Suspension_Coil$PSI,Suspension_Coil$Manufacturing_Lot == "Lot2"),mu=mean(Suspension_Coil$PSI))
+
+	One Sample t-test
+
+data:  subset(Suspension_Coil$PSI, Suspension_Coil$Manufacturing_Lot == "Lot2")
+t = 3.6739, df = 49, p-value = 0.0005911
+alternative hypothesis: true mean is not equal to 1498.78
+95 percent confidence interval:
+ 1499.423 1500.977
+sample estimates:
+mean of x 
+   1500.2 
+
+> t.test(subset(Suspension_Coil$PSI,Suspension_Coil$Manufacturing_Lot == "Lot3"),mu=mean(Suspension_Coil$PSI))
+
+	One Sample t-test
+
+data:  subset(Suspension_Coil$PSI, Suspension_Coil$Manufacturing_Lot == "Lot3")
+t = -1.4305, df = 49, p-value = 0.1589
+alternative hypothesis: true mean is not equal to 1498.78
+95 percent confidence interval:
+ 1492.431 1499.849
+sample estimates:
+mean of x 
+  1496.14 
+
+> save.image("~/Desktop/R_Analysis/MechaCarChallenge.RScript.RData")
+
