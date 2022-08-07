@@ -32,3 +32,25 @@ lot_summary dataframe
 
 #### The design specifications for the MechaCar suspension coils dictate that the variance of the suspension coils must not exceed 100 pounds per square inch. Does the current manufacturing data meet this design specification for all manufacturing lots in total and each lot individually? Why or why not?
 I would say the majority that the current manufacturing data does meet the design specifications of not exceeding 100 pounds. If we look at the chart for the total_summary dataframe variance it tells us the number 62.29356 which is below 100pds. But when it comes to the lot_summary dataframe we can see that Lot3 is above 100 being 170.2861224 which exceeds the limits. Lot1 and Lot2 does meet specifications though.
+
+## T-Tests on Suspension Coils
+### Summary:
+
+<img width="1440" alt="Screen Shot 2022-08-06 at 7 05 56 PM" src="https://user-images.githubusercontent.com/99035696/183268579-0a8c9e05-38b6-40a9-af4e-65278d550a8a.png">
+<img width="846" alt="Screen Shot 2022-08-06 at 7 06 13 PM" src="https://user-images.githubusercontent.com/99035696/183268582-1a446478-0bda-435b-ae06-8728977378ac.png">
+For the T-Tests for all of the Lots the results states that the mean of x is 1498.78. The P value looks to be 1 which above the common .05. The mean is similar to the presumed 1500.
+<img width="1440" alt="Screen Shot 2022-08-06 at 7 06 41 PM" src="https://user-images.githubusercontent.com/99035696/183268586-3d151bfa-1e50-4547-b0db-1e46e58fc024.png">
+<img width="846" alt="Screen Shot 2022-08-06 at 7 06 33 PM" src="https://user-images.githubusercontent.com/99035696/183268594-c2845f91-f155-46df-917d-199498f7ca32.png">
+Lot1: The mean is exactly the presumed 1500. The p-value is 1.568e-11 meaning it is no statstically signifigant. 
+Lot2: The mean is 1500.2. The p-value is 0.005911 which is similar to .05.
+Lot3: The mean is 1496.14. The p-value is 0.1589 which is similar to the .05.
+
+## Study Design: MechaCar vs Competition
+### What metric or metrics are you going to test?
+The metrics I would look into testing would be something for the type of engine and the impact on the environment. 
+### What is the null hypothesis or alternative hypothesis?
+The hypthoseis is based on the data from the different types of engines  would cause harm to the environment such as polution.
+### What statistical test would you use to test the hypothesis? And why?
+The test I would use for my hypothesis is multiple linear regression. This would show the impact on the variables from each car to the environment.
+### What data is needed to run the statistical test?
+The data I would have to find with the competitors and our cars would have somthing to do with the environmental impact.
